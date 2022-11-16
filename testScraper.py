@@ -8,10 +8,6 @@ class TestVideoParser:
         v = VideoParser("https://www.youtube.com/watch?v=OY-dBg3slzM")
         assert(v.description is None) is True
 
-    def testUrlInvalid(self):
-        with pytest.raises(Exception, match=r"L'Url n'est pas valide") :
-            v = VideoParser("notAnURL")
-
     def testVideoDoesntExist(self):
         with pytest.raises(Exception, match=r"Cette vidéo n'existe pas"):
             v = VideoParser("https://www.youtube.com/watch?v=kldjfmqlksf")
