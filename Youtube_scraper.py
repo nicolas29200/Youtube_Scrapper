@@ -13,9 +13,6 @@ class VideoParser:
     title : str
     author : str
     def __init__(self, url : str)->None:
-        # Is the URL valid?
-        if not(url.startswith("https://www.youtube.com/watch?v=")):
-            raise Exception("L'Url n'est pas valide")
 
         response = requests.get(url)        
         self.soup = BeautifulSoup(response.text, "html.parser")
